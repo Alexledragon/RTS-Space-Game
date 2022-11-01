@@ -14,7 +14,11 @@ public class ShipScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Target.position.x);
-        Debug.Log(Target.position.y);
+        if (Target != null)
+        {
+            Debug.Log(Target.position.x);
+            Debug.Log(Target.position.y);
+        }
+ 
     }
 }
