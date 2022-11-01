@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShipScript : MonoBehaviour
 {
-    [SerializeField] private Transform Target;
+    public Transform Target;
     // Start is called before the first frame update
     void Start()
     {
