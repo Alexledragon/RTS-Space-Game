@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ShipScript : MonoBehaviour
 {
+    [SerializeField] private Transform Target;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,7 @@ public class ShipScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(Target.position.x);
+        Debug.Log(Target.position.y);
     }
 }
