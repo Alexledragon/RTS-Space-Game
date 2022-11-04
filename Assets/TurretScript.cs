@@ -6,16 +6,25 @@ public class TurretScript : MonoBehaviour
 {
     //get script from owner ship
     [SerializeField] private ShipScript shipScr;
-    [SerializeField] private float speed = 1f;
-    [SerializeField] private GameObject Barrel;
-    private Transform target;
+
+    [Header("Turret Rotation")]
+    [SerializeField] private float rotationSpeed = 1f;
+    [SerializeField] private GameObject turretBarrel;
+    private Transform targetShip;
+
+    [Header("Shooting")]
     public Transform shootingSpot;
-    public GameObject Bullet;
+    public GameObject bullet;
+    [SerializeField] private float bulletSpeed = 50f;
+
+    [Header("Reloading")]
+    [SerializeField] private float reloadTime = 1f;
+    private float reloadTimer;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        reloadTimer = reloadTime;
     }
 
     // Update is called once per frame
@@ -24,32 +33,32 @@ public class TurretScript : MonoBehaviour
         //if there is a target, rotate towards it to shoot
         if (shipScr.Target != null)
         {
-            target = shipScr.Target;
-            RotateTowardsTarget();
+            targetShip = shipScr.Target;
+            RotateTowardsTarget(targetShip);
         }
         //if there is no target, rotate to 0,0,0
         else if (shipScr.Target == null)
-        {
-            Vector3 newDirection = Vector3.RotateTowards(transform.forward, new Vector3(0, 0, 0), speed, 0.0f);
-            Barrel.transform.rotation = Quaternion.LookRotation(newDirection);
+        {  
+            Vector3 newDirection = Vector3.RotateTowards(transform.forward, new Vector3(0, 0, 0), rotationSpeed, 0.0f);
+            turretBarrel.transform.rotation = Quaternion.LookRotation(newDirection);
         }
-        if (Input.GetKey(KeyCode.Space))
-        {
-            ShootCanon(Bullet);
-        }
+
+        CanTurretShoot();
+
+       
 
     }
 
 
     //method to rotate tip of turret towards target
-    void RotateTowardsTarget()
+    void RotateTowardsTarget(Transform target)
     {
         // Determine which direction to rotate towards
         Vector3 targetDirection = target.position - transform.position;
 
-        // Rotate the barrel towards target
-        Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, speed, 0.0f);
-        Barrel.transform.rotation = Quaternion.LookRotation(newDirection);
+        // Rotate the barrel towards target with rotatetowards, for 360 change the transform.forward of the newdirection rotatetowards to barrel.transform.forward
+        Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, rotationSpeed, 0.0f);
+        turretBarrel.transform.rotation = Quaternion.LookRotation(newDirection);
     }
 
 
@@ -57,6 +66,23 @@ public class TurretScript : MonoBehaviour
     void ShootCanon(GameObject BulletPrefab)
     {
         GameObject bullet = Instantiate(BulletPrefab, shootingSpot.position, Quaternion.identity);
-        bullet.GetComponent<Rigidbody>().velocity = transform.TransformDirection(Vector3.forward * 10f);
+        bullet.GetComponent<Rigidbody>().velocity = turretBarrel.transform.TransformDirection(Vector3.forward * bulletSpeed);
+
+        //(FUTURE PROJECT, MAKE IT SO THAT IT SEES WHERE THE TARGET IS GOING AND SHOOTS ACORDINGLY USING THE TARGET'S RIGIDBODY VELOCITY, aka vector3.right * target.velocity.right * force)
+    }
+
+    //method to check if turret can shoot
+    void CanTurretShoot()
+    {
+        //slowly decrease the timer using deltatime
+        reloadTimer -= Time.deltaTime;
+
+        //if the timer has reached 0 or below and we have a target, shoot then set timer back to reloadTime
+        if  (shipScr.Target != null && reloadTimer <= 0)
+        {
+            ShootCanon(bullet);
+            reloadTimer = reloadTime;
+        }
+
     }
 }

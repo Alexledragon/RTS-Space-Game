@@ -241,10 +241,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipScr: {fileID: 0}
-  speed: 1
-  Barrel: {fileID: 7743788423353703035}
+  rotationSpeed: 1
+  turretBarrel: {fileID: 7743788423353703035}
   shootingSpot: {fileID: 4281843349647009591}
-  Bullet: {fileID: 4571972320432649578, guid: 2153cc663d7bd4941a79fcf3744d173c, type: 3}
+  bullet: {fileID: 0}
+  reloadTime: 0.1
 --- !u!1 &6426832132388662352
 GameObject:
   m_ObjectHideFlags: 0
