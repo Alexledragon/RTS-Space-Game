@@ -272,6 +272,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Corvette Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3405605368973729625, guid: 9c454710e7288cd41b3306577469ef37, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c454710e7288cd41b3306577469ef37, type: 3}
 --- !u!1 &963194225

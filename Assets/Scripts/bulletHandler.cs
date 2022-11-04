@@ -35,10 +35,18 @@ public class bulletHandler : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+        //check if what the bullet collided is an Enemy
         if (collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.transform.localScale += new Vector3(+1, +1, +1);
+            //run code here for dealing dmg
+
+            //destroy gameobject after it's dealt dmg
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
+        //if it's not an enemy, simply destroy gameobject
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }
