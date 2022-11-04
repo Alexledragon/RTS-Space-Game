@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShipScript : MonoBehaviour
+public class ShipManager : MonoBehaviour
 {
     public Transform Target;
     // Start is called before the first frame update

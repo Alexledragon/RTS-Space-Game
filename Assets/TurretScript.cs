@@ -5,7 +5,7 @@ using UnityEngine;
 public class TurretScript : MonoBehaviour
 {
     //get script from owner ship
-    [SerializeField] private ShipScript shipScr;
+    [SerializeField] private ShipManager shipScr;
 
     [Header("Turret Rotation")]
     [SerializeField] private float rotationSpeed = 1f;
