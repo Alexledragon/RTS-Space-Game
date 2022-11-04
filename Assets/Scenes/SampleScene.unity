@@ -461,6 +461,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Corvette
       objectReference: {fileID: 0}
+    - target: {fileID: 7430177072593090475, guid: 9f6f11de5dc397b4db6e36941db8f9e0, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f6f11de5dc397b4db6e36941db8f9e0, type: 3}
 --- !u!4 &1955718478 stripped
