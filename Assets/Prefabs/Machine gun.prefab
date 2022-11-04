@@ -245,6 +245,7 @@ MonoBehaviour:
   turretBarrel: {fileID: 7743788423353703035}
   shootingSpot: {fileID: 4281843349647009591}
   bullet: {fileID: 0}
+  bulletSpeed: 20
   reloadTime: 0.1
 --- !u!1 &6426832132388662352
 GameObject:
