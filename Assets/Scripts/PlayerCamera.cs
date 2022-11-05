@@ -49,8 +49,6 @@ public class PlayerCamera : MonoBehaviour
     }
 
 
-    //---------- CUSTOM FUNCTIONS
-
 
     void RegisterInputs()
     {
