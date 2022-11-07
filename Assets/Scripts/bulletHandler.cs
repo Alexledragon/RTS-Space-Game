@@ -8,6 +8,8 @@ public class bulletHandler : MonoBehaviour
     [SerializeField] private float deathTime = 1f;
     private float deathTimer;
 
+    [SerializeField] private float dmg;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -39,6 +41,7 @@ public class bulletHandler : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             //run code here for dealing dmg
+            collision.gameObject.GetComponent<ShipHealthManager>().takeDMG(dmg);
 
             //destroy gameobject after it's dealt dmg
             Destroy(gameObject);

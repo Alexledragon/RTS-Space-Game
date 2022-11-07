@@ -565,6 +565,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5451373576433033509}
   - component: {fileID: 4520219616104137095}
+  - component: {fileID: 304047977813747488}
   m_Layer: 0
   m_Name: Corvette
   m_TagString: Untagged
@@ -601,6 +602,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
+--- !u!114 &304047977813747488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7430177072593090475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14a5f73c32e70da40b59f3f5d73fe887, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7919917527315866152
 GameObject:
   m_ObjectHideFlags: 0

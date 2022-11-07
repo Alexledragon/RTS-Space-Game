@@ -427,7 +427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5451373576433033509, guid: 9f6f11de5dc397b4db6e36941db8f9e0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.2589025
+      value: -20.88
       objectReference: {fileID: 0}
     - target: {fileID: 5451373576433033509, guid: 9f6f11de5dc397b4db6e36941db8f9e0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -461,6 +461,10 @@ PrefabInstance:
       propertyPath: bullet
       value: 
       objectReference: {fileID: 4571972320432649578, guid: 2153cc663d7bd4941a79fcf3744d173c, type: 3}
+    - target: {fileID: 6671120881120581147, guid: 9f6f11de5dc397b4db6e36941db8f9e0, type: 3}
+      propertyPath: reloadTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7430177072593090475, guid: 9f6f11de5dc397b4db6e36941db8f9e0, type: 3}
       propertyPath: m_Name
       value: Corvette
