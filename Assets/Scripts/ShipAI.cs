@@ -4,9 +4,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+//make sure the gameobject have a ship movement script
+[RequireComponent(typeof(ShipMovement))]
+
 public class ShipAI : MonoBehaviour
 {
-    [Header("Broaside Behaviour")]
+    [Header("AI System")]
+    [SerializeField][Range(1, 2)] int behaviourType;
+
+    [Header("Broaside Behaviour (1)")]
     [SerializeField] float broadEngageDistance;
     [SerializeField] float broadDistance;
     [SerializeField] float broadRetreatDistance;
@@ -17,13 +23,17 @@ public class ShipAI : MonoBehaviour
     [SerializeField] float broadSpeedPercent;
     [SerializeField] float broadRetreatSpeedPercent;
 
+    [Header("Torpedo Skirmish Behaviour (2)")]
+    [SerializeField] GameObject torpedo;
+    [SerializeField] Transform torpedoTube;
+
 
     //store a "movement order" as a normalised Vector3 direction for movement script
     [NonSerialized] public Vector3 aiDirection;
     [NonSerialized] public float aiSpeedPercent;
 
     //reference the target and ship transform
-    [SerializeField] Transform targetTransform;
+    public Transform targetTransform;
     Transform shipTransform;
 
     //collect info about target
@@ -38,10 +48,18 @@ public class ShipAI : MonoBehaviour
         shipTransform = GetComponent<Transform>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         checkTargetState();
-        BroadSideBehaviour();
+
+        switch (behaviourType)
+        {
+            case 1: BroadSideBehaviour();
+                break;
+
+            case 2: TorpedoSkirmishBehaviour();
+                break;
+        }
     }
 
     void checkTargetState()
@@ -107,5 +125,14 @@ public class ShipAI : MonoBehaviour
             //call on the move toward function to get closer
             MoveTowardTarget();
         }
+    }
+
+    void TorpedoSkirmishBehaviour()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(torpedo, torpedoTube.position, torpedoTube.rotation, shipTransform);
+        }
+        
     }
 }

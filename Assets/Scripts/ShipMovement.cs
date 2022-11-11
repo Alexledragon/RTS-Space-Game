@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+//make sure the gameobject have a rigidbody and ship AI script
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent (typeof(ShipAI))]
+
 public class ShipMovement : MonoBehaviour
 {
     [SerializeField] float speed;
@@ -28,12 +32,9 @@ public class ShipMovement : MonoBehaviour
         shipRigidBody = GetComponent<Rigidbody>();
         shipTransform = GetComponent<Transform>();
         shipAI = GetComponent<ShipAI>();
-
-        //PLACEHOLDER, assign constant speed% and direction until proper AI given
-        targetSpeedPercent = 100f;
     }
 
-    void Update()
+    private void FixedUpdate()
     {
         GetAIOrders();
         MoveShipForward();
@@ -50,7 +51,7 @@ public class ShipMovement : MonoBehaviour
         Vector3 forward = shipTransform.forward;
 
         //gradually increment the current speed% to reach the target speed%, making movements smoother
-        currentSpeedPercent = Mathf.MoveTowards(currentSpeedPercent, targetSpeedPercent, acceleration * Time.deltaTime);
+        currentSpeedPercent = Mathf.MoveTowards(currentSpeedPercent, targetSpeedPercent, acceleration * Time.fixedDeltaTime);
 
         //create a vector scaling the forward direction to the speed currently used
         Vector3 forwardMovement = forward * (speed / 100f * currentSpeedPercent);
@@ -67,7 +68,7 @@ public class ShipMovement : MonoBehaviour
         float currentSteerSpeed = (maxSteeringSpeed / 100 * 5) + (maxSteeringSpeed / 100 * 95) / 100 * currentSpeedPercent;
 
         //gradually increment the current Y rotation angle to reach the target direction given by the AI, making the steering smoother
-        currentDirection = Vector3.RotateTowards(transform.forward, targetDirection, currentSteerSpeed * Time.deltaTime, 0f);
+        currentDirection = Vector3.RotateTowards(shipTransform.forward, targetDirection, currentSteerSpeed * Time.fixedDeltaTime, 0f);
 
         //apply the obtained rotation angle to the ship rigidbody
         shipRigidBody.rotation = Quaternion.LookRotation(currentDirection);
