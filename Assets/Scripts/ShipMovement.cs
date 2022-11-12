@@ -3,10 +3,6 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-//make sure the gameobject have a rigidbody and ship AI script
-[RequireComponent(typeof(Rigidbody))]
-[RequireComponent (typeof(ShipAI))]
-
 public class ShipMovement : MonoBehaviour
 {
     [SerializeField] float speed;
@@ -22,7 +18,7 @@ public class ShipMovement : MonoBehaviour
     float targetSpeedPercent;
 
     //used for forward movement
-    float currentSpeedPercent;
+    [DoNotSerialize] public float currentSpeedPercent;
     Vector3 currentDirection;
 
 

@@ -1,7 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using Unity.VisualScripting;
+using UnityEditor.UIElements;
 using UnityEngine;
+
+//make sure the gameobject have a rigidbody and ship AI script
+[RequireComponent(typeof(Rigidbody))]
 
 public class TorpedoManager : MonoBehaviour
 {
@@ -9,7 +14,6 @@ public class TorpedoManager : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float acceleration;
     [SerializeField] float maxSteeringSpeed;
-    [Header("Payload")]
 
     //reference the ShipAI that instantiated the torpedo
     ShipAI parentShipAi;
@@ -17,15 +21,13 @@ public class TorpedoManager : MonoBehaviour
     //reference the target transform and store informations obtained from it
     Transform targetTransform;
     Vector3 targetDirection;
-    Vector3 targetLastPosition;
-    Vector3 targetPredictedDirection;
 
     //reference the body meant to be moved by the script
     Rigidbody torpedoRigidBody;
     Transform torpedoTransform;
 
     //used for forward movement
-    float currentSpeedPercent;
+    [DoNotSerialize] public float currentSpeedPercent;
     Vector3 currentDirection;
 
     
@@ -75,7 +77,7 @@ public class TorpedoManager : MonoBehaviour
         float currentSteerSpeed = (maxSteeringSpeed / 100 * 5) + (maxSteeringSpeed / 100 * 95) / 100 * currentSpeedPercent;
 
         //gradually increment the current Y rotation angle to reach the target direction, making the steering smoother
-        currentDirection = Vector3.RotateTowards(torpedoTransform.forward, targetPredictedDirection, currentSteerSpeed * Time.deltaTime, 0f);
+        currentDirection = Vector3.RotateTowards(torpedoTransform.forward, targetDirection, currentSteerSpeed * Time.deltaTime, 0f);
 
         //apply the obtained rotation angle to the torpedo rigidbody
         torpedoRigidBody.rotation = Quaternion.LookRotation(currentDirection);
@@ -87,13 +89,5 @@ public class TorpedoManager : MonoBehaviour
 
         //get the vector between the torpedo and target
         targetDirection = targetTransform.position - torpedoTransform.position;
-
-        //float targetSpeed = (targetTransform.position - targetLastPosition).magnitude * Time.fixedDeltaTime;
-        float targetSpeed = Vector3.Distance(targetLastPosition, targetTransform.position) * Time.fixedDeltaTime;
-        targetLastPosition = targetTransform.position;
-
-        Vector3 targetPredictedPosition = targetTransform.forward * targetSpeed;
-        targetPredictedDirection = targetPredictedPosition + targetDirection;
-
     }
 }

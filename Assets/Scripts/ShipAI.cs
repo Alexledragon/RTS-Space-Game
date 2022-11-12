@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-//make sure the gameobject have a ship movement script
-[RequireComponent(typeof(ShipMovement))]
-
 public class ShipAI : MonoBehaviour
 {
     [Header("AI System")]
@@ -26,6 +23,17 @@ public class ShipAI : MonoBehaviour
     [Header("Torpedo Skirmish Behaviour (2)")]
     [SerializeField] GameObject torpedo;
     [SerializeField] Transform torpedoTube;
+    [SerializeField] float torpedoRechargeTime;
+    [SerializeField] float torpedoShootRange;
+    [SerializeField] float torpedoRetreatDistance;
+    [SerializeField] float torpedoApproachDistance;
+    [SerializeField] float torpedoEngagmentSpeedPercent;
+    [SerializeField] float torpedoRetreatSpeedPercent;
+    [SerializeField] float torpedoApproachSpeedPercent;
+    [SerializeField] float torpedoSafetySpeedPercent;
+
+    bool torpedoIsLoaded;
+    float torpedoTimer;
 
 
     //store a "movement order" as a normalised Vector3 direction for movement script
@@ -33,7 +41,7 @@ public class ShipAI : MonoBehaviour
     [NonSerialized] public float aiSpeedPercent;
 
     //reference the target and ship transform
-    public Transform targetTransform;
+    [NonSerialized] public Transform targetTransform;
     Transform shipTransform;
 
     //collect info about target
@@ -44,14 +52,30 @@ public class ShipAI : MonoBehaviour
 
     private void Start()
     {
+        targetTransform = GetComponent<ShipManager>().Target;
+
         //assign the transform component to the gameobject holding the script
         shipTransform = GetComponent<Transform>();
+
+        //set the torpedo reload timer to the set time and enable the torpedo to be shot at spawn
+        torpedoTimer = torpedoRechargeTime;
+        torpedoIsLoaded = true;
+    }
+
+    private void Update()
+    {
+        //check for the selected behaviour for the AI, if torpedo skirmisher was picked, enable the torpedo reload cooldown
+        if(behaviourType == 2)
+        {
+            CheckTorpedoCooldown();
+        }
     }
 
     void FixedUpdate()
     {
         checkTargetState();
 
+        //apply the right behaviour depending on the one chosen
         switch (behaviourType)
         {
             case 1: BroadSideBehaviour();
@@ -129,10 +153,60 @@ public class ShipAI : MonoBehaviour
 
     void TorpedoSkirmishBehaviour()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        //----- Make the ship approach the target to shoot a torpedo then retreat while it reload
+
+        //check if a torpedo is loaded and ready to fire, get in range to shoot if yes, stay at a set distance until ready to shoot if not
+        if(torpedoIsLoaded == true)
         {
-            Instantiate(torpedo, torpedoTube.position, torpedoTube.rotation, shipTransform);
+            //make the ship move toward the target
+            aiDirection = targetDirection;
+            aiSpeedPercent = torpedoEngagmentSpeedPercent;
+
+            //if the ship is at shooting range, instanciate a torpedo with an initial speed% equal to the ship speed% and reset the torpedo reload timer and state
+            if (targetDistance <= torpedoShootRange)
+            {
+                GameObject lastFiredTorpedo = Instantiate(torpedo, torpedoTube.position, torpedoTube.rotation, shipTransform);
+                lastFiredTorpedo.GetComponent<TorpedoManager>().currentSpeedPercent = GetComponent<ShipMovement>().currentSpeedPercent;
+
+                torpedoTimer = 0;
+                torpedoIsLoaded = false;
+            }
         }
-        
+        else
+        {
+            //if the target is too close, move away from it
+            if(targetDistance <= torpedoRetreatDistance)
+            {
+                aiDirection = Quaternion.AngleAxis(180, Vector3.up) * targetDirection;
+                aiSpeedPercent = torpedoRetreatSpeedPercent;
+            }
+            //if the target is at a safe distance, turn around clockwise
+            else if(targetDistance >= torpedoApproachDistance)
+            {
+                aiDirection = shipTransform.right;
+                aiSpeedPercent = torpedoSafetySpeedPercent;
+            }
+            //if the target is too far, try to get closer back to safe distance
+            else
+            {
+                aiDirection = targetDirection;
+                aiSpeedPercent = torpedoApproachSpeedPercent;
+            }
+        }
+    }
+
+    void CheckTorpedoCooldown()
+    {
+        //----- Handle the torpedo reload system
+
+        //if the timer did not reach the wanted time, increment it over time, when the time is reached, set the torpedo as ready to shoot
+        if(torpedoTimer < torpedoRechargeTime)
+        {
+            torpedoTimer += Time.deltaTime;
+        }
+        else
+        {
+            torpedoIsLoaded = true;
+        }
     }
 }

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6917112254378334538}
   - component: {fileID: 6917112254378334542}
   - component: {fileID: 6917112254378334543}
+  - component: {fileID: 6541282779410076483}
   m_Layer: 0
   m_Name: Torpedo Placeholder
   m_TagString: Untagged
@@ -114,7 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 18
   acceleration: 15
-  maxSteeringSpeed: 8
+  maxSteeringSpeed: 1
 --- !u!54 &6917112254378334543
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -131,3 +132,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 68
   m_CollisionDetection: 0
+--- !u!114 &6541282779410076483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6917112254378334536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebe33b58b601a3f4b9c076fc367c4ef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathTime: 60
+  dmg: 300
