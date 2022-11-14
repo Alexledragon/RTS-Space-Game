@@ -10,6 +10,7 @@ public class PlayerCamera : MonoBehaviour
     [SerializeField] float minVerticalAngle;
     [Header("Movements")]
     [SerializeField] float movementSpeed;
+    [SerializeField] float elevationPerScroll;
     [SerializeField] float elevationSpeed;
     [SerializeField] float maxElevation;
     [SerializeField] float minElevation;
@@ -109,11 +110,11 @@ public class PlayerCamera : MonoBehaviour
         //----- Move the camera on the Y axis in relation to the user mouse wheel inputs
 
         //increment the wanted camera elevation value to reach with the mouse wheel input value, keep it within wanted boundaries
-        wantedCameraElevation -= inputMouseScroll * elevationSpeed;
+        wantedCameraElevation -= inputMouseScroll * elevationPerScroll;
         wantedCameraElevation = Mathf.Clamp(wantedCameraElevation, minElevation, maxElevation);
 
         //to smoothen the camera movement, make the camera elevation value gradually move toward the wanted elevation
-        cameraElevation = Mathf.MoveTowards(cameraElevation, wantedCameraElevation, elevationSpeed / 150);
+        cameraElevation = Mathf.MoveTowards(cameraElevation, wantedCameraElevation, elevationSpeed);
 
         //apply the obtained camera elevation value to the camera transform without affecting the X and Z positions
         transform.position = new Vector3(transform.position.x, cameraElevation, transform.position.z);

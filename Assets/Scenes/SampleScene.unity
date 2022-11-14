@@ -379,7 +379,8 @@ MonoBehaviour:
   maxVerticalAngle: 30
   minVerticalAngle: 80
   movementSpeed: 50
-  elevationSpeed: 15
+  elevationPerScroll: 80
+  elevationSpeed: 0.2
   maxElevation: 80
   minElevation: 10
 --- !u!1001 &1856242408
