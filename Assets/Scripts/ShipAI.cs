@@ -52,6 +52,7 @@ public class ShipAI : MonoBehaviour
 
     private void Start()
     {
+        //assign the transform of the current target to the target of the ship manager script
         targetTransform = GetComponent<ShipManager>().Target;
 
         //assign the transform component to the gameobject holding the script
