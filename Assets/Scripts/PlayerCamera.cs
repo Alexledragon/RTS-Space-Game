@@ -10,10 +10,14 @@ public class PlayerCamera : MonoBehaviour
     [SerializeField] float minVerticalAngle;
     [Header("Movements")]
     [SerializeField] float movementSpeed;
+    [SerializeField] float fastMovementSpeed;
     [SerializeField] float elevationPerScroll;
     [SerializeField] float elevationSpeed;
     [SerializeField] float maxElevation;
     [SerializeField] float minElevation;
+
+    //used to adapt the camera movement
+    float currentMovementSpeed;
 
     //used to register user input values
     float inputMouseX;
@@ -65,6 +69,16 @@ public class PlayerCamera : MonoBehaviour
         //register the keyboard movement inputs
         inputKeyHorizontal = Input.GetAxisRaw("Horizontal");
         inputKeyVertical = Input.GetAxisRaw("Vertical");
+
+        //register shift input to adapt camera speed
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            currentMovementSpeed = fastMovementSpeed;
+        }
+        else
+        {
+            currentMovementSpeed = movementSpeed;
+        }
     }
 
 
@@ -98,7 +112,7 @@ public class PlayerCamera : MonoBehaviour
 
         //create a vector with the inputed movements oriented toward the local directions, normalise that vector and scale it to wanted speed
         Vector3 cameraMovement = inputKeyVertical * forward + inputKeyHorizontal * right;
-        cameraMovement = cameraMovement.normalized * movementSpeed;
+        cameraMovement = cameraMovement.normalized * currentMovementSpeed;
 
         //use the movement vector to increment the camera transform position over time and move it
         transform.position += cameraMovement * Time.deltaTime;

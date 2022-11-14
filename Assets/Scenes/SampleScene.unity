@@ -376,9 +376,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivity: 2
-  maxVerticalAngle: 30
+  maxVerticalAngle: 25
   minVerticalAngle: 80
   movementSpeed: 50
+  fastMovementSpeed: 120
   elevationPerScroll: 80
   elevationSpeed: 0.2
   maxElevation: 80
