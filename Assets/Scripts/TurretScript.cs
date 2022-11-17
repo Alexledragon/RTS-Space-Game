@@ -56,8 +56,8 @@ public class TurretScript : MonoBehaviour
         // Determine which direction to rotate towards
         Vector3 targetDirection = target.position - transform.position;
 
-        // Rotate the barrel towards target with rotatetowards, for 360 change the transform.forward of the newdirection rotatetowards to barrel.transform.forward
-        Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, rotationSpeed, 0.0f);
+        // Rotate the barrel towards target with rotatetowards, for 360 change the transform.forward of the newdirection rotatetowards to turretBarrel.transform.forward
+        Vector3 newDirection = Vector3.RotateTowards(turretBarrel.transform.forward, targetDirection, rotationSpeed, 0.0f);
         turretBarrel.transform.rotation = Quaternion.LookRotation(newDirection);
     }
 

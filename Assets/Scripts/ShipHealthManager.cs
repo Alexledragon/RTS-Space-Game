@@ -66,12 +66,10 @@ public class ShipHealthManager : MonoBehaviour
         {
             shipHP -= dmg;
         }
-
-        Debug.Log("shield is" + currentshipShields);
-        Debug.Log("hp is" + shipHP);
-        
-
-
+        if (shipHP <= 0)
+        {
+            Destroy(gameObject);
+        }
 
     }
 
