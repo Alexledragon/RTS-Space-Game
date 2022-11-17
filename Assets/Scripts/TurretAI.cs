@@ -18,7 +18,7 @@ public class TurretAI : MonoBehaviour
     //used to detect and sort all the detected target
     GameObject[] targetsDetected;
     Transform closestTarget;
-    float smallestDistance = 0;
+    float closestShipDistance = 0;
     Transform shipTarget;
     float shipTargetDistance;
 
@@ -46,17 +46,18 @@ public class TurretAI : MonoBehaviour
     {
         //----- Detect all the opponent and declare the closest one and the one targeted by the ship
 
-        //put all the objects holding the enemy tag in an array and check each of their relative distances
+        //put all the objects holding the enemy tag in an array and check each of their relative distances, reset the closest ship distance collected
         //if closest found yet, declare it's distance and transform as closest, if also target by ship, declare as ship target
         targetsDetected = GameObject.FindGameObjectsWithTag(adversaryFaction);
+        closestShipDistance = 0;
 
         foreach (GameObject target in targetsDetected)
         {
             float targetDistance = (target.transform.position - transform.position).magnitude;
 
-            if(targetDistance < smallestDistance | smallestDistance == 0)
+            if(targetDistance < closestShipDistance | closestShipDistance == 0)
             {
-                smallestDistance = targetDistance;
+                closestShipDistance = targetDistance;
                 closestTarget = target.transform;
             }
 
@@ -77,7 +78,7 @@ public class TurretAI : MonoBehaviour
         {
             currentTarget = shipTarget;
         }
-        else if (smallestDistance <= turretMaxRange & smallestDistance >= turretMinRange)
+        else if (closestShipDistance <= turretMaxRange & closestShipDistance >= turretMinRange)
         {
             currentTarget = closestTarget;
         }
