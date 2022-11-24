@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 6497878540689120063}
   - component: {fileID: 8958644504094264282}
   m_Layer: 0
-  m_Name: Machine gun
+  m_Name: turret placeholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

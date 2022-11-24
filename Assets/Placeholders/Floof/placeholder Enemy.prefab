@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 286336771405629911}
   - component: {fileID: 293853215359539067}
   m_Layer: 0
-  m_Name: Corvette Enemy
+  m_Name: placeholder Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
