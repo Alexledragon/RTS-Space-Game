@@ -12,6 +12,7 @@ public class ShipAI : MonoBehaviour
     [SerializeField] int distanceWeightAggroDecrement;
     [SerializeField] int strengthAggroWeight;
 
+    GameObject[] targetDetected;
     string adversaryFaction;
 
     [Header("Broaside Behaviour (1)")]
@@ -121,7 +122,7 @@ public class ShipAI : MonoBehaviour
         //----- Compare all the enemy ships to pick the most important one as a target depending on their distance and size
 
         //search for all the game objects with the tag of the respective opponent faction, place them all in an array and reset the aggro counter from the last check
-        GameObject[] targetDetected = GameObject.FindGameObjectsWithTag(adversaryFaction);
+        targetDetected = GameObject.FindGameObjectsWithTag(adversaryFaction);
         float biggestAggroWeight = 0;
 
         //set the current biggestAggro as a default to the last target
