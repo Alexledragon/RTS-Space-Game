@@ -8,6 +8,11 @@ public class ShipAI : MonoBehaviour
 {
     [Header("AI System")]
     [SerializeField][Range(1, 2)] int behaviourType;
+    [SerializeField] int distanceInitialAggroWeight;
+    [SerializeField] int distanceWeightAggroDecrement;
+    [SerializeField] int strengthAggroWeight;
+
+    string adversaryFaction;
 
     [Header("Broaside Behaviour (1)")]
     [SerializeField] float broadEngageDistance;
@@ -52,8 +57,15 @@ public class ShipAI : MonoBehaviour
 
     private void Start()
     {
-        //assign the transform of the current target to the target of the ship manager script
-        targetTransform = GetComponent<ShipManager>().Target;
+        //check for tag of attached gameobject, target enemies if player, target players if enemy
+        if (transform.CompareTag("Enemy"))
+        {
+            adversaryFaction = "Player";
+        }
+        else
+        {
+            adversaryFaction = "Enemy";
+        }
 
         //assign the transform component to the gameobject holding the script
         shipTransform = GetComponent<Transform>();
@@ -74,7 +86,9 @@ public class ShipAI : MonoBehaviour
 
     void FixedUpdate()
     {
-        checkTargetState();
+        //pick a relevant target and check for it's current status and position
+        PickTarget();
+        CheckTargetState();
 
         //apply the right behaviour depending on the one chosen
         switch (behaviourType)
@@ -87,7 +101,49 @@ public class ShipAI : MonoBehaviour
         }
     }
 
-    void checkTargetState()
+    void PickTarget()
+    {
+        //----- Define which target does the ship go for
+
+        //if ship received order from player, apply it, otherwise run an aggro check to pick a target itself
+        if(GetComponent<ShipManager>().Target != null)
+        {
+            targetTransform = GetComponent<ShipManager>().Target;
+        }
+        else
+        {
+            RunAggroCheck();
+        }
+    }
+
+    void RunAggroCheck()
+    {
+        //----- Compare all the enemy ships to pick the most important one as a target depending on their distance and size
+
+        //search for all the game objects with the tag of the respective opponent faction, place them all in an array and reset the aggro counter from the last check
+        GameObject[] targetDetected = GameObject.FindGameObjectsWithTag(adversaryFaction);
+        float biggestAggroWeight = 0;
+        Transform biggestAggroTarget;
+
+        //compare all the objects in the array, check their distance and shield/hull values to define aggro, only remember the largest aggro and designate it as a target
+        foreach (GameObject target in targetDetected)
+        {
+            float distance = (target.transform.position - transform.position).magnitude;
+            float distanceAggro = distanceInitialAggroWeight - distance * distanceWeightAggroDecrement;
+
+            float strengthAggro = (target.GetComponent<ShipHealthManager>().HULLPLACEHOLDER + target.GetComponent<ShipHealthManager>().SHIELDPLACEHOLDER) * strengthAggroWeight;
+
+            float targetAggro = distanceAggro + strengthAggro;
+            if(targetAggro > biggestAggroWeight)
+            {
+                biggestAggroTarget = target.transform;
+                biggestAggroWeight = targetAggro;
+            }
+        }
+        targetTransform = biggestAggroTarget;
+    }
+
+    void CheckTargetState()
     {
         //----- Check the target state, output what the AI need to know for further decisions
 
