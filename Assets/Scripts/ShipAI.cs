@@ -123,15 +123,17 @@ public class ShipAI : MonoBehaviour
         //search for all the game objects with the tag of the respective opponent faction, place them all in an array and reset the aggro counter from the last check
         GameObject[] targetDetected = GameObject.FindGameObjectsWithTag(adversaryFaction);
         float biggestAggroWeight = 0;
-        Transform biggestAggroTarget;
 
-        //compare all the objects in the array, check their distance and shield/hull values to define aggro, only remember the largest aggro and designate it as a target
+        //set the current biggestAggro as a default to the last target
+        Transform biggestAggroTarget = targetTransform;
+
+        //compare all the objects in the array, check their distance and shield/hull values to define aggro, only remember the largest total aggro one
         foreach (GameObject target in targetDetected)
         {
             float distance = (target.transform.position - transform.position).magnitude;
             float distanceAggro = distanceInitialAggroWeight - distance * distanceWeightAggroDecrement;
 
-            float strengthAggro = (target.GetComponent<ShipHealthManager>().HULLPLACEHOLDER + target.GetComponent<ShipHealthManager>().SHIELDPLACEHOLDER) * strengthAggroWeight;
+            float strengthAggro = (target.GetComponent<ShipHealthManager>().maxShipHP + target.GetComponent<ShipHealthManager>().shipShieldMax) * strengthAggroWeight;
 
             float targetAggro = distanceAggro + strengthAggro;
             if(targetAggro > biggestAggroWeight)
@@ -140,6 +142,8 @@ public class ShipAI : MonoBehaviour
                 biggestAggroWeight = targetAggro;
             }
         }
+
+        //assign the obtained biggest aggro target as the current AI target
         targetTransform = biggestAggroTarget;
     }
 
