@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public class bulletHandler : MonoBehaviour
     [SerializeField] private float deathTime = 1f;
     private float deathTimer;
 
+    [NonSerialized] public string targetTag = "Player";
     [SerializeField] private float dmg;
 
     // Start is called before the first frame update
@@ -38,8 +40,9 @@ public class bulletHandler : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         //check if what the bullet collided is an Enemy
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == targetTag)
         {
+            Debug.Log("uwu");
             //run code here for dealing dmg
             collision.gameObject.GetComponent<ShipHealthManager>().takeDMG(dmg);
 

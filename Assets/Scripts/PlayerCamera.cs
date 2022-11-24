@@ -87,7 +87,7 @@ public class PlayerCamera : MonoBehaviour
         //----- Rotate the camera in relation to the user mouse movements
 
         //if right click is held down, increment the X and Y camera rotation values with mouse inputs, keep X rotation within wanted boundaries and hide the cursor
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(2))
         {
             cameraRotationX -= inputMouseY * mouseSensitivity;
             cameraRotationX = Mathf.Clamp(cameraRotationX, maxVerticalAngle, minVerticalAngle);
@@ -140,7 +140,7 @@ public class PlayerCamera : MonoBehaviour
         //----- Manage the cursor lock and visibility depending on the inputs currently pressed
 
         //lock and hide the cursor when right click is held
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(2))
         {
             Cursor.lockState = CursorLockMode.Locked;
         }

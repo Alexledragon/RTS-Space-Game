@@ -5,10 +5,11 @@ using UnityEngine;
 public class ShipHealthManager : MonoBehaviour
 {
 
-    [SerializeField] private float shipHP = 100;
+    [SerializeField] private float shipHP;
+    [SerializeField] public float maxShipHP = 100f;
 
     [Header("Shield")]
-    [SerializeField] private float shipShieldMax = 100f;
+    [SerializeField] public float shipShieldMax = 100f;
     private float currentshipShields;
     [SerializeField] private int shipShieldRechargeSpeed = 10;
 
@@ -19,6 +20,7 @@ public class ShipHealthManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        shipHP = maxShipHP;
         currentshipShields = shipShieldMax;
     }
 

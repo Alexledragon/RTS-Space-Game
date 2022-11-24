@@ -204,6 +204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1855529558181423146}
   - component: {fileID: 6497878540689120063}
+  - component: {fileID: 8958644504094264282}
   m_Layer: 0
   m_Name: Machine gun
   m_TagString: Untagged
@@ -240,13 +241,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08963e39160e71e4e85b8ac503a9bca4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipScr: {fileID: 0}
+  targetType: 0
+  turretai: {fileID: 0}
   rotationSpeed: 1
   turretBarrel: {fileID: 7743788423353703035}
   shootingSpot: {fileID: 4281843349647009591}
   bullet: {fileID: 0}
   bulletSpeed: 20
   reloadTime: 0.1
+--- !u!114 &8958644504094264282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4157001903030772396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d9f855f01fd6d543a8d6fb78907ce99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turretMaxRange: 0
+  turretMinRange: 0
 --- !u!1 &6426832132388662352
 GameObject:
   m_ObjectHideFlags: 0
