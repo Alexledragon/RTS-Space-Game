@@ -15,18 +15,17 @@ public class ShipManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Target != null)
-        {
-            Debug.Log(Target.position.x);
-            Debug.Log(Target.position.y);
-        }
  
     }
 
+
+    //if the player clicks on the ship, the ship will send a signal to the gamemanager to send it as the selected ship 
     private void OnMouseDown()
     {
         gameManager.selectedShip = this.gameObject;
     }
+
+    //if the player right clicks on the ship, then this ship will be marked as the target of the selected ship, but only if it's marked as an enemy
     private void OnMouseOver()
     {
         if (Input.GetKeyDown(KeyCode.Mouse1))

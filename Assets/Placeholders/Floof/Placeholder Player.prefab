@@ -567,7 +567,7 @@ GameObject:
   - component: {fileID: 4520219616104137095}
   - component: {fileID: 304047977813747488}
   m_Layer: 0
-  m_Name: Corvette
+  m_Name: Placeholder Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
