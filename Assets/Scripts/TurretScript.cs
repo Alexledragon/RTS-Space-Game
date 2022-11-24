@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class TurretScript : MonoBehaviour
 {
+    [Header("1 for enemy, 2 for player")]
+    [SerializeField] [Range(1, 2)] int targetType;
+
     //get script from owner ship
-    [SerializeField] private ShipManager shipScr;
+    [SerializeField] private TurretAI turretai;
 
     [Header("Turret Rotation")]
     [SerializeField] private float rotationSpeed = 1f;
@@ -21,23 +24,37 @@ public class TurretScript : MonoBehaviour
     [SerializeField] private float reloadTime = 1f;
     private float reloadTimer;
 
+    private string bulletTargetString;
+
     // Start is called before the first frame update
     void Start()
     {
         reloadTimer = reloadTime;
+
+        //apply the right behaviour depending on the one chosen
+        switch (targetType)
+        {
+            case 1:
+                bulletTargetString = "Enemy";
+                break;
+
+            case 2:
+                bulletTargetString = "Player";
+                break;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         //if there is a target, rotate towards it to shoot
-        if (shipScr.Target != null)
+        if (turretai.currentTarget != null)
         {
-            targetShip = shipScr.Target;
+            targetShip = turretai.currentTarget;
             RotateTowardsTarget(targetShip);
         }
         //if there is no target, rotate to 0,0,0
-        else if (shipScr.Target == null)
+        else if (turretai.currentTarget == null)
         {  
             Vector3 newDirection = Vector3.RotateTowards(transform.forward, new Vector3(0, 0, 0), rotationSpeed, 0.0f);
             turretBarrel.transform.rotation = Quaternion.LookRotation(newDirection);
@@ -67,6 +84,7 @@ public class TurretScript : MonoBehaviour
     {
         GameObject bullet = Instantiate(BulletPrefab, shootingSpot.position, Quaternion.identity);
         bullet.GetComponent<Rigidbody>().velocity = turretBarrel.transform.TransformDirection(Vector3.forward * bulletSpeed);
+        bullet.GetComponent<bulletHandler>().targetTag = bulletTargetString;
 
         //(FUTURE PROJECT, MAKE IT SO THAT IT SEES WHERE THE TARGET IS GOING AND SHOOTS ACORDINGLY USING THE TARGET'S RIGIDBODY VELOCITY, aka vector3.right * target.velocity.right * force)
     }
@@ -78,7 +96,7 @@ public class TurretScript : MonoBehaviour
         reloadTimer -= Time.deltaTime;
 
         //if the timer has reached 0 or below and we have a target, shoot then set timer back to reloadTime
-        if  (shipScr.Target != null && reloadTimer <= 0)
+        if  (turretai.currentTarget != null && reloadTimer <= 0)
         {
             ShootCanon(bullet);
             reloadTimer = reloadTime;
