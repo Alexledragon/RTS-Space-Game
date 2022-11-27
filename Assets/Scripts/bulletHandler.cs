@@ -42,7 +42,6 @@ public class bulletHandler : MonoBehaviour
         //check if what the bullet collided is an Enemy
         if (collision.gameObject.tag == targetTag)
         {
-            Debug.Log("uwu");
             //run code here for dealing dmg
             collision.gameObject.GetComponent<ShipHealthManager>().takeDMG(dmg);
 
