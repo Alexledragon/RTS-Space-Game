@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turretMaxRange: 60
-  turretMinRange: 5
+  turretMinRange: 1
 --- !u!114 &7315712560863022496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   turretBarrel: {fileID: 758757504996889689}
   shootingSpot: {fileID: 4080724171907204671}
   bullet: {fileID: 6199927018543935555, guid: 3ab989cf797e9eb4db8b72cdf6bfc797, type: 3}
-  bulletSpeed: 30
+  bulletSpeed: 60
   reloadTime: 1
 --- !u!1 &2305814491560862141
 GameObject:
