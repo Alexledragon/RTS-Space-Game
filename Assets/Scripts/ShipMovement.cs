@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -18,7 +19,7 @@ public class ShipMovement : MonoBehaviour
     float targetSpeedPercent;
 
     //used for forward movement
-    [DoNotSerialize] public float currentSpeedPercent;
+    [NonSerialized] public float currentSpeedPercent;
     Vector3 currentDirection;
 
 
