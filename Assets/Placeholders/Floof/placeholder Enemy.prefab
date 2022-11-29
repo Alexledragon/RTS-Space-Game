@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2286807392277683350}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShipBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 4915213020002634781}
   - component: {fileID: 2854360377225970649}
   - component: {fileID: 914238116529945601}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2050591474545821744}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Thrusters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4681593535255079762}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GunSlots
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 502971521670208115}
   - component: {fileID: 7455303302983366992}
   - component: {fileID: 6004638668376162281}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: placeholder Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -248,6 +248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
   selectionSpherePrefab: {fileID: 0}
+  shipSize: 1
 --- !u!114 &7455303302983366992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,7 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipHP: 0
-  maxShipHP: 100
+  maxShipHP: 10000
   shipShieldMax: 100
   shipShieldRechargeSpeed: 10
   rechargeTime: 5
@@ -273,7 +274,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3405605368973729625}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10000000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
@@ -292,7 +293,7 @@ GameObject:
   - component: {fileID: 2676637027926118542}
   - component: {fileID: 893165692681360559}
   - component: {fileID: 3590988788825775108}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Thruster2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -375,7 +376,7 @@ GameObject:
   - component: {fileID: 1265242474516973426}
   - component: {fileID: 758197078542997103}
   - component: {fileID: 1893520672911425727}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -458,7 +459,7 @@ GameObject:
   - component: {fileID: 7305449645533167838}
   - component: {fileID: 1739122077199811738}
   - component: {fileID: 8607246696658317715}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Thruster1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -541,7 +542,7 @@ GameObject:
   - component: {fileID: 6235751335092580898}
   - component: {fileID: 1686511524706008838}
   - component: {fileID: 7540025920316695011}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cockpit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -625,7 +626,7 @@ GameObject:
   - component: {fileID: 2575029406469716426}
   - component: {fileID: 8358635099244398587}
   - component: {fileID: 6585017434506675055}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -704,6 +705,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4681593535255079762}
     m_Modifications:
+    - target: {fileID: 241352968036384234, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676496911863659139, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1855529558181423146, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -722,15 +731,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1855529558181423146, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.65
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 1855529558181423146, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.43
+      value: -0.74
       objectReference: {fileID: 0}
     - target: {fileID: 1855529558181423146, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.05
+      value: 1.34
       objectReference: {fileID: 0}
     - target: {fileID: 1855529558181423146, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
       propertyPath: m_LocalRotation.w
@@ -768,10 +777,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: Machine gun
       objectReference: {fileID: 0}
+    - target: {fileID: 4157001903030772396, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4449078853565549638, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1190887f331d4d941ab2b7789f740826, type: 2}
+    - target: {fileID: 6426832132388662352, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6497878540689120063, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 4571972320432649578, guid: 2153cc663d7bd4941a79fcf3744d173c, type: 3}
+    - target: {fileID: 6497878540689120063, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
+      propertyPath: turretai
+      value: 
+      objectReference: {fileID: 7425951285639190919}
+    - target: {fileID: 6497878540689120063, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
+      propertyPath: targetType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7743788423353703035, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8958644504094264282, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
+      propertyPath: turretMaxRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8958644504094264282, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
+      propertyPath: turretMinRange
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
 --- !u!4 &188327250403162743 stripped
@@ -779,3 +820,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1855529558181423146, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
   m_PrefabInstance: {fileID: 1971794814033351261}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7425951285639190919 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8958644504094264282, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
+  m_PrefabInstance: {fileID: 1971794814033351261}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d9f855f01fd6d543a8d6fb78907ce99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

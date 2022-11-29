@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2222447703636466384}
   - component: {fileID: 6861761727068510196}
   - component: {fileID: 2377305786273024273}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cockpit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 6472066254943039360}
   - component: {fileID: 4817662606174420637}
   - component: {fileID: 5915844940943894605}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 3259556214563678252}
   - component: {fileID: 5799779752989879400}
   - component: {fileID: 4552431001024272737}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Thruster1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 7773838847161520440}
   - component: {fileID: 4296918870778523401}
   - component: {fileID: 1386194801811549085}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -342,7 +342,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6332678526462653540}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ShipBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -378,7 +378,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6065016848896860354}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Thrusters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,7 +413,7 @@ GameObject:
   - component: {fileID: 894024550153446639}
   - component: {fileID: 8053235511063423787}
   - component: {fileID: 4967021914126914803}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -498,9 +498,9 @@ GameObject:
   - component: {fileID: 304047977813747488}
   - component: {fileID: 4946812337225746819}
   - component: {fileID: 8489875492321177822}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Placeholder Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -535,6 +535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
   selectionSpherePrefab: {fileID: 1965234695467768004, guid: 0567bffab875aa14aa4c3c953ea3b7c5, type: 3}
+  shipSize: 1
 --- !u!114 &304047977813747488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -548,7 +549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipHP: 0
-  maxShipHP: 100
+  maxShipHP: 10000
   shipShieldMax: 100
   shipShieldRechargeSpeed: 10
   rechargeTime: 5
@@ -560,7 +561,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7430177072593090475}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10000000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
@@ -591,7 +592,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 623240713393062816}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GunSlots
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -625,7 +626,7 @@ GameObject:
   - component: {fileID: 7888966888247507068}
   - component: {fileID: 4916602391063215197}
   - component: {fileID: 8758287291432105206}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Thruster2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -704,6 +705,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 623240713393062816}
     m_Modifications:
+    - target: {fileID: 241352968036384234, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676496911863659139, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1855529558181423146, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -768,10 +777,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: Machine gun
       objectReference: {fileID: 0}
+    - target: {fileID: 4157001903030772396, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6426832132388662352, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6497878540689120063, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 4571972320432649578, guid: 2153cc663d7bd4941a79fcf3744d173c, type: 3}
     - target: {fileID: 6497878540689120063, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
       propertyPath: shipScr
       value: 
       objectReference: {fileID: 4520219616104137095}
+    - target: {fileID: 6497878540689120063, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
+      propertyPath: turretai
+      value: 
+      objectReference: {fileID: 8857156279504848638}
+    - target: {fileID: 6497878540689120063, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
+      propertyPath: targetType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7743788423353703035, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8958644504094264282, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
+      propertyPath: turretMaxRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8958644504094264282, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
+      propertyPath: turretMinRange
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
 --- !u!4 &2268025646048257294 stripped
@@ -779,3 +820,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1855529558181423146, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
   m_PrefabInstance: {fileID: 484575680777588004}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8857156279504848638 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8958644504094264282, guid: 4466c6a3f79e6b944b61314315fd1390, type: 3}
+  m_PrefabInstance: {fileID: 484575680777588004}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d9f855f01fd6d543a8d6fb78907ce99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

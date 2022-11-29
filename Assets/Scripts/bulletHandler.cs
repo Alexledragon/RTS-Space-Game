@@ -9,19 +9,34 @@ public class bulletHandler : MonoBehaviour
     [SerializeField] private float deathTime = 1f;
     private float deathTimer;
 
-    [NonSerialized] public string targetTag = "Player";
+    [NonSerialized] public string targetTag;
     [SerializeField] private float dmg;
 
     // Start is called before the first frame update
     void Awake()
     {
         deathTimer = deathTime;
+      
+
+
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         BulletDeathTime();
+        if (targetTag == "Player")
+        {
+            gameObject.layer = 8;
+        }
+        else
+        {
+            gameObject.layer = 9;
+        }
+
+
+
+
     }
 
 
@@ -39,6 +54,7 @@ public class bulletHandler : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log(targetTag);
         //check if what the bullet collided is an Enemy
         if (collision.gameObject.tag == targetTag)
         {

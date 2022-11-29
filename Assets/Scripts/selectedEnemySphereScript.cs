@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class selectedEnemySphereScript : MonoBehaviour
+public class SelectedEnemySphereScript : MonoBehaviour
 {
     private Material renderedMaterial;
     private bool switchRender = true;
@@ -53,7 +53,6 @@ public class selectedEnemySphereScript : MonoBehaviour
         //if the timer has reached 0 or below, the bullet is destroyed
         if (deathTimer <= 0)
         {
-            Debug.Log("uuw");
             Destroy(gameObject);
         }
 
