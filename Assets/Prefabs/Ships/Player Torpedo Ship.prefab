@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2700052900390588916}
   - component: {fileID: 2700052900390588919}
   - component: {fileID: 2700052900390588918}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ship Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2808501236831501687}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Torpedo Tube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 7005290709837635196}
   - component: {fileID: 4346082959916819709}
   - component: {fileID: 3568700800962981514}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 3405680777196863270}
   - component: {fileID: 7056352318941888908}
   - component: {fileID: 1656681575982318567}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player Torpedo Ship
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -334,6 +334,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
+  selectionSpherePrefab: {fileID: 1965234695467768004, guid: 0567bffab875aa14aa4c3c953ea3b7c5, type: 3}
+  shipSize: 1
 --- !u!114 &3405680777196863270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,7 +389,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7555484339748381654}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Emiter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -416,6 +418,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7599615238694587954}
     m_Modifications:
+    - target: {fileID: 758757504996889689, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 850397640096677084, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -464,9 +470,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Normal Turret
       objectReference: {fileID: 0}
+    - target: {fileID: 1638594576704651616, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305814491560862141, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4080724171907204671, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
       propertyPath: m_LocalPosition.z
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768131256904296502, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8422954198552358197, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}

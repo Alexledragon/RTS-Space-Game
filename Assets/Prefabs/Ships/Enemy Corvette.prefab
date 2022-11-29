@@ -51,6 +51,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 575288602726451594, guid: d84e662b28d06df4bb8f0ac7d6d6ef27, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548175864421691372, guid: d84e662b28d06df4bb8f0ac7d6d6ef27, type: 3}
+      propertyPath: selectionSpherePrefab
+      value: 
+      objectReference: {fileID: 6061520687433427286, guid: 38f2b5205f3f31648a7d368cba40f17b, type: 3}
     - target: {fileID: 1628381155186501919, guid: d84e662b28d06df4bb8f0ac7d6d6ef27, type: 3}
       propertyPath: bullet
       value: 
@@ -59,6 +67,14 @@ PrefabInstance:
       propertyPath: targetType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1788632604831763593, guid: d84e662b28d06df4bb8f0ac7d6d6ef27, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2616468720499751127, guid: d84e662b28d06df4bb8f0ac7d6d6ef27, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3831834957811898434, guid: d84e662b28d06df4bb8f0ac7d6d6ef27, type: 3}
       propertyPath: bullet
       value: 
@@ -66,14 +82,34 @@ PrefabInstance:
     - target: {fileID: 3831834957811898434, guid: d84e662b28d06df4bb8f0ac7d6d6ef27, type: 3}
       propertyPath: targetType
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280172814192115156, guid: d84e662b28d06df4bb8f0ac7d6d6ef27, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050432192900699266, guid: d84e662b28d06df4bb8f0ac7d6d6ef27, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5614372754379130787, guid: d84e662b28d06df4bb8f0ac7d6d6ef27, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5614372754379130808, guid: d84e662b28d06df4bb8f0ac7d6d6ef27, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1190887f331d4d941ab2b7789f740826, type: 2}
+    - target: {fileID: 5716244782401533023, guid: d84e662b28d06df4bb8f0ac7d6d6ef27, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5911362517989402577, guid: d84e662b28d06df4bb8f0ac7d6d6ef27, type: 3}
       propertyPath: m_Name
       value: Enemy Corvette
+      objectReference: {fileID: 0}
+    - target: {fileID: 5911362517989402577, guid: d84e662b28d06df4bb8f0ac7d6d6ef27, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5911362517989402577, guid: d84e662b28d06df4bb8f0ac7d6d6ef27, type: 3}
       propertyPath: m_TagString
@@ -87,6 +123,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1190887f331d4d941ab2b7789f740826, type: 2}
+    - target: {fileID: 6497688937343451579, guid: d84e662b28d06df4bb8f0ac7d6d6ef27, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7323689507026544095, guid: d84e662b28d06df4bb8f0ac7d6d6ef27, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7845389058080539906, guid: d84e662b28d06df4bb8f0ac7d6d6ef27, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8195911487257592062, guid: d84e662b28d06df4bb8f0ac7d6d6ef27, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -95,5 +143,9 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1190887f331d4d941ab2b7789f740826, type: 2}
+    - target: {fileID: 8761797289200988390, guid: d84e662b28d06df4bb8f0ac7d6d6ef27, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d84e662b28d06df4bb8f0ac7d6d6ef27, type: 3}
