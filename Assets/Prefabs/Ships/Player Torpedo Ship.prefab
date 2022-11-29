@@ -91,7 +91,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2700052900390588908}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: b1910b384a5c69a47bfc3ebb71138fdb, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
@@ -297,9 +297,9 @@ MonoBehaviour:
   torpedo: {fileID: 1564277979343748285, guid: 83137c6495254e54e869a91223c65c47, type: 3}
   torpedoTube: {fileID: 7555484339748381654}
   torpedoRechargeTime: 12
-  torpedoShootRange: 50
-  torpedoRetreatDistance: 100
-  torpedoApproachDistance: 130
+  torpedoShootRange: 80
+  torpedoRetreatDistance: 120
+  torpedoApproachDistance: 150
   torpedoEngagmentSpeedPercent: 100
   torpedoRetreatSpeedPercent: 100
   torpedoApproachSpeedPercent: 100
