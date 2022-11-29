@@ -328,4 +328,5 @@ MonoBehaviour:
   shootingSpot: {fileID: 8322498740588694165}
   bullet: {fileID: 8073136830260326403, guid: fb36e9b4b4631a1479f6cd9af5a94537, type: 3}
   bulletSpeed: 60
+  precisionRandomizerRange: 3
   reloadTime: 5
