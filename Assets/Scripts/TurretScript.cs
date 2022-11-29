@@ -19,6 +19,7 @@ public class TurretScript : MonoBehaviour
     public Transform shootingSpot;
     public GameObject bullet;
     [SerializeField] private float bulletSpeed = 50f;
+    [SerializeField] float precisionRandomizerRange;
 
     [Header("Reloading")]
     [SerializeField] private float reloadTime = 1f;
@@ -73,8 +74,11 @@ public class TurretScript : MonoBehaviour
         // Determine which direction to rotate towards
         Vector3 targetDirection = target.position - transform.position;
 
+        //calculate the interception point with the target
+        Vector3 interceptionDirection = GetInterceptionPoint(target, targetDirection);
+
         // Rotate the barrel towards target with rotatetowards, for 360 change the transform.forward of the newdirection rotatetowards to turretBarrel.transform.forward
-        Vector3 newDirection = Vector3.RotateTowards(turretBarrel.transform.forward, targetDirection, rotationSpeed, 0.0f);
+        Vector3 newDirection = Vector3.RotateTowards(turretBarrel.transform.forward, interceptionDirection, rotationSpeed, 0.0f);
         turretBarrel.transform.rotation = Quaternion.LookRotation(newDirection);
     }
 
@@ -83,7 +87,7 @@ public class TurretScript : MonoBehaviour
     void ShootCanon(GameObject BulletPrefab)
     {
         GameObject bullet = Instantiate(BulletPrefab, shootingSpot.position, Quaternion.identity);
-        bullet.GetComponent<Rigidbody>().velocity = turretBarrel.transform.TransformDirection(Vector3.forward * bulletSpeed);
+        bullet.GetComponent<Rigidbody>().velocity = turretBarrel.transform.TransformDirection(Vector3.forward * bulletSpeed + CreatePrecisionFactor());
         bullet.GetComponent<bulletHandler>().targetTag = bulletTargetString;
 
         //(FUTURE PROJECT, MAKE IT SO THAT IT SEES WHERE THE TARGET IS GOING AND SHOOTS ACORDINGLY USING THE TARGET'S RIGIDBODY VELOCITY, aka vector3.right * target.velocity.right * force)
@@ -102,5 +106,31 @@ public class TurretScript : MonoBehaviour
             reloadTimer = reloadTime;
         }
 
+    }
+
+    //intake a transform and vector3 of a target, and determine the interception point to shoot it considering the target and bullet speed, give back the direction toward interception
+    Vector3 GetInterceptionPoint(Transform targetTransform, Vector3 targetDirection)
+    {
+        //get distance to target, calculate the time the bullet would take to reach it
+        float targetDistance = targetDirection.magnitude;
+        float bulletTravelTime = targetDistance / bulletSpeed;
+
+        //get the rigidbody associated with the target transform
+        Rigidbody targetRigidbody = targetTransform.GetComponent<Rigidbody>();
+
+        //create a vector 3 representing the movement and direction that the ship will take forward during the bullet travel time
+        Vector3 targetMovePrediction = targetTransform.forward * (bulletTravelTime * targetRigidbody.velocity.magnitude);
+
+        //add the target ship predicted movement to the current aim direction toward the target to shift it toward the predicted interception point
+        Vector3 interceptionPoint = targetMovePrediction + targetDirection;
+        return interceptionPoint;
+    }
+
+    //generate a procedural random vector 3 meant to add error and unprecision factor to another vector3
+    Vector3 CreatePrecisionFactor()
+    {
+        //create a vector 3 made out of randomized values within a wanted range to create a fake error factor
+        Vector3 randomizedPrecision = new Vector3(Random.Range(-precisionRandomizerRange, precisionRandomizerRange), Random.Range(-precisionRandomizerRange, precisionRandomizerRange), Random.Range(-precisionRandomizerRange, precisionRandomizerRange));
+        return randomizedPrecision;
     }
 }
