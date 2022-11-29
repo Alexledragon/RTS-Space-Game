@@ -73,8 +73,10 @@ public class TurretScript : MonoBehaviour
         // Determine which direction to rotate towards
         Vector3 targetDirection = target.position - transform.position;
 
+        Vector3 interceptionDirection = GetInterceptionPoint(target, targetDirection);
+
         // Rotate the barrel towards target with rotatetowards, for 360 change the transform.forward of the newdirection rotatetowards to turretBarrel.transform.forward
-        Vector3 newDirection = Vector3.RotateTowards(turretBarrel.transform.forward, targetDirection, rotationSpeed, 0.0f);
+        Vector3 newDirection = Vector3.RotateTowards(turretBarrel.transform.forward, interceptionDirection, rotationSpeed, 0.0f);
         turretBarrel.transform.rotation = Quaternion.LookRotation(newDirection);
     }
 
@@ -102,5 +104,23 @@ public class TurretScript : MonoBehaviour
             reloadTimer = reloadTime;
         }
 
+    }
+
+    //intake a transform and vector3 of a target, and determine the interception point to shoot it considering the target and bullet speed, give back the direction toward interception
+    Vector3 GetInterceptionPoint(Transform targetTransform, Vector3 targetDirection)
+    {
+        //get distance to target, calculate the time the bullet would take to reach it
+        float targetDistance = targetDirection.magnitude;
+        float bulletTravelTime = targetDistance / bulletSpeed;
+
+        //get the rigidbody associated with the target transform
+        Rigidbody targetRigidbody = targetTransform.GetComponent<Rigidbody>();
+
+        //create a vector 3 representing the movement and direction that the ship will take forward during the bullet travel time
+        Vector3 targetMovePrediction = targetTransform.forward * (bulletTravelTime * targetRigidbody.velocity.magnitude);
+
+        //add the target ship predicted movement to the current aim direction toward the target to shift it toward the predicted interception point
+        Vector3 interceptionPoint = targetMovePrediction + targetDirection;
+        return interceptionPoint;
     }
 }
