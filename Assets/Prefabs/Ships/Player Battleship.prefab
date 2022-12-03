@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8761766267881073251}
   - component: {fileID: 7238386452853634739}
   - component: {fileID: 7793787111696267713}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ship Superstructure
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 4425264101176040535}
   - component: {fileID: 5614775056936694097}
   - component: {fileID: 748793702095342232}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ship Rear Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 3579001987145719562}
   - component: {fileID: 9170904566763832624}
   - component: {fileID: 4786863363101694229}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ship Rear right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -306,7 +306,7 @@ GameObject:
   - component: {fileID: 7069328051818986148}
   - component: {fileID: 7069328051818986151}
   - component: {fileID: 7069328051818986150}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ship Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,7 +407,7 @@ GameObject:
   - component: {fileID: 7503180844012754038}
   - component: {fileID: 2778435829211441884}
   - component: {fileID: 5881270910522550455}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player Battleship
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -511,6 +511,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
+  selectionSpherePrefab: {fileID: 1965234695467768004, guid: 0567bffab875aa14aa4c3c953ea3b7c5, type: 3}
+  shipSize: 3
 --- !u!114 &7503180844012754038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -562,6 +564,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3320435427300468066}
     m_Modifications:
+    - target: {fileID: 2311230313812878492, guid: 3a6ae4b30764faf4895a349bf91b9c68, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556105390308516255, guid: 3a6ae4b30764faf4895a349bf91b9c68, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4617290937717436534, guid: 3a6ae4b30764faf4895a349bf91b9c68, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -606,9 +616,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 4708922906901321971, guid: 3a6ae4b30764faf4895a349bf91b9c68, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6062187669996383511, guid: 3a6ae4b30764faf4895a349bf91b9c68, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6729403227740114378, guid: 3a6ae4b30764faf4895a349bf91b9c68, type: 3}
       propertyPath: m_Name
       value: Big Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 6729403227740114378, guid: 3a6ae4b30764faf4895a349bf91b9c68, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a6ae4b30764faf4895a349bf91b9c68, type: 3}
@@ -624,6 +646,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3320435427300468066}
     m_Modifications:
+    - target: {fileID: 758757504996889689, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 850397640096677084, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -672,9 +698,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Normal Turret
       objectReference: {fileID: 0}
+    - target: {fileID: 1638594576704651616, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305814491560862141, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4080724171907204671, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
       propertyPath: m_LocalPosition.z
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315712560863022496, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: reloadTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768131256904296502, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8422954198552358197, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
@@ -690,6 +736,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3320435427300468066}
     m_Modifications:
+    - target: {fileID: 758757504996889689, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 850397640096677084, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -738,9 +788,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Normal Turret
       objectReference: {fileID: 0}
+    - target: {fileID: 1638594576704651616, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305814491560862141, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4080724171907204671, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
       propertyPath: m_LocalPosition.z
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315712560863022496, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: reloadTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768131256904296502, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8422954198552358197, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
@@ -756,6 +826,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3320435427300468066}
     m_Modifications:
+    - target: {fileID: 758757504996889689, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 850397640096677084, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -804,9 +878,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Normal Turret
       objectReference: {fileID: 0}
+    - target: {fileID: 1638594576704651616, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305814491560862141, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4080724171907204671, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
       propertyPath: m_LocalPosition.z
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315712560863022496, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: reloadTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768131256904296502, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8422954198552358197, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
@@ -822,6 +916,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3320435427300468066}
     m_Modifications:
+    - target: {fileID: 758757504996889689, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 850397640096677084, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -870,9 +968,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Normal Turret
       objectReference: {fileID: 0}
+    - target: {fileID: 1638594576704651616, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305814491560862141, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4080724171907204671, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
       propertyPath: m_LocalPosition.z
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315712560863022496, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: reloadTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768131256904296502, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8422954198552358197, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
@@ -888,6 +1006,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3320435427300468066}
     m_Modifications:
+    - target: {fileID: 758757504996889689, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 850397640096677084, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -936,9 +1058,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Normal Turret
       objectReference: {fileID: 0}
+    - target: {fileID: 1638594576704651616, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305814491560862141, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4080724171907204671, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
       propertyPath: m_LocalPosition.z
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315712560863022496, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: reloadTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768131256904296502, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8422954198552358197, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
@@ -954,6 +1096,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3320435427300468066}
     m_Modifications:
+    - target: {fileID: 758757504996889689, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 850397640096677084, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -1002,9 +1148,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Normal Turret
       objectReference: {fileID: 0}
+    - target: {fileID: 1638594576704651616, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305814491560862141, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4080724171907204671, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
       propertyPath: m_LocalPosition.z
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315712560863022496, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: reloadTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768131256904296502, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8422954198552358197, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
@@ -1020,6 +1186,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3320435427300468066}
     m_Modifications:
+    - target: {fileID: 758757504996889689, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 850397640096677084, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -1068,9 +1238,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Normal Turret
       objectReference: {fileID: 0}
+    - target: {fileID: 1638594576704651616, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305814491560862141, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4080724171907204671, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
       propertyPath: m_LocalPosition.z
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315712560863022496, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: reloadTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768131256904296502, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8422954198552358197, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
@@ -1086,6 +1276,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3320435427300468066}
     m_Modifications:
+    - target: {fileID: 758757504996889689, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 850397640096677084, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -1138,9 +1332,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Normal Turret
       objectReference: {fileID: 0}
+    - target: {fileID: 1638594576704651616, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305814491560862141, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4080724171907204671, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
       propertyPath: m_LocalPosition.z
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315712560863022496, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: reloadTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768131256904296502, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8422954198552358197, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
@@ -1156,6 +1370,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3320435427300468066}
     m_Modifications:
+    - target: {fileID: 758757504996889689, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 850397640096677084, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1204,9 +1422,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Normal Turret
       objectReference: {fileID: 0}
+    - target: {fileID: 1638594576704651616, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305814491560862141, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4080724171907204671, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
       propertyPath: m_LocalPosition.z
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315712560863022496, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: reloadTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768131256904296502, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8422954198552358197, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
@@ -1222,6 +1460,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3320435427300468066}
     m_Modifications:
+    - target: {fileID: 758757504996889689, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 850397640096677084, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1270,9 +1512,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Normal Turret
       objectReference: {fileID: 0}
+    - target: {fileID: 1638594576704651616, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305814491560862141, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4080724171907204671, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
       propertyPath: m_LocalPosition.z
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315712560863022496, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: reloadTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768131256904296502, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8422954198552358197, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
@@ -1288,6 +1550,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3320435427300468066}
     m_Modifications:
+    - target: {fileID: 758757504996889689, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 850397640096677084, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -1336,9 +1602,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Normal Turret
       objectReference: {fileID: 0}
+    - target: {fileID: 1638594576704651616, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305814491560862141, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4080724171907204671, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
       propertyPath: m_LocalPosition.z
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315712560863022496, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: reloadTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768131256904296502, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8422954198552358197, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
@@ -1354,6 +1640,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3320435427300468066}
     m_Modifications:
+    - target: {fileID: 758757504996889689, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 850397640096677084, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1402,9 +1692,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Normal Turret
       objectReference: {fileID: 0}
+    - target: {fileID: 1638594576704651616, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305814491560862141, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4080724171907204671, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
       propertyPath: m_LocalPosition.z
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315712560863022496, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: reloadTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768131256904296502, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8422954198552358197, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2ca435fc24550949be55460a7dd13c4, type: 3}

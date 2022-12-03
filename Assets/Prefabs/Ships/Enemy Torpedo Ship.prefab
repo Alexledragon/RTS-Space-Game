@@ -15,10 +15,34 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1190887f331d4d941ab2b7789f740826, type: 2}
+    - target: {fileID: 2700052900390588908, guid: 193139d6cf07cf740bbddd7515727515, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2700052900390588919, guid: 193139d6cf07cf740bbddd7515727515, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1190887f331d4d941ab2b7789f740826, type: 2}
+    - target: {fileID: 2866241955398165008, guid: 193139d6cf07cf740bbddd7515727515, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3351941301030748877, guid: 193139d6cf07cf740bbddd7515727515, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424627678233141899, guid: 193139d6cf07cf740bbddd7515727515, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3656549205821528052, guid: 193139d6cf07cf740bbddd7515727515, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3949378934499046815, guid: 193139d6cf07cf740bbddd7515727515, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4223037269553768428, guid: 193139d6cf07cf740bbddd7515727515, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -28,6 +52,10 @@ PrefabInstance:
       value: Enemy Torpedo Ship
       objectReference: {fileID: 0}
     - target: {fileID: 4223146557609619870, guid: 193139d6cf07cf740bbddd7515727515, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4223146557609619870, guid: 193139d6cf07cf740bbddd7515727515, type: 3}
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
@@ -35,6 +63,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1190887f331d4d941ab2b7789f740826, type: 2}
+    - target: {fileID: 4681677651286041194, guid: 193139d6cf07cf740bbddd7515727515, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5538673246165266072, guid: 193139d6cf07cf740bbddd7515727515, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049737241647475611, guid: 193139d6cf07cf740bbddd7515727515, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6755302818076184077, guid: 193139d6cf07cf740bbddd7515727515, type: 3}
       propertyPath: bullet
       value: 
@@ -87,5 +127,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9074463217247140259, guid: 193139d6cf07cf740bbddd7515727515, type: 3}
+      propertyPath: selectionSpherePrefab
+      value: 
+      objectReference: {fileID: 6061520687433427286, guid: 38f2b5205f3f31648a7d368cba40f17b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 193139d6cf07cf740bbddd7515727515, type: 3}

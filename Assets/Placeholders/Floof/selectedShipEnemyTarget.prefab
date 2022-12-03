@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5386274455297955852}
   - component: {fileID: 202702348573371851}
   - component: {fileID: 9002906353105458122}
-  - component: {fileID: 8374877540093645571}
+  - component: {fileID: 2122804007085825721}
   m_Layer: 0
   m_Name: selectedShipEnemyTarget
   m_TagString: Untagged
@@ -98,7 +98,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8374877540093645571
+--- !u!114 &2122804007085825721
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
