@@ -46,6 +46,17 @@ public class ShipSpawner : MonoBehaviour
         currentXIncrement = 0f;
     }
 
+    public void EnableShipsAI()
+    {
+        GameObject[] shipsDetected = GameObject.FindGameObjectsWithTag(spawnedShipsTag);
+        foreach (GameObject ship in shipsDetected)
+        {
+            ship.GetComponent<ShipAI>().enabled = true;
+            ship.GetComponent<ShipMovement>().enabled = true;
+            ship.GetComponent<ShipManager>().enabled = true;
+        }
+    }
+
     private void Start()
     {
         referencePoint = transform.position;
@@ -66,7 +77,7 @@ public class ShipSpawner : MonoBehaviour
 
     void MoveToNext()
     {
-        if (currentRowSize > rowSize)
+        if (currentRowSize >= rowSize-1)
         {
             currentZIncrement = 0f;
             currentXIncrement += xIncrementPerStep;
