@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bulletHandler : MonoBehaviour
+public class BulletHandler : MonoBehaviour
 {
     [Header("Death Timer")]
     [SerializeField] private float deathTime = 1f;

@@ -88,7 +88,7 @@ public class TurretScript : MonoBehaviour
     {
         GameObject bullet = Instantiate(BulletPrefab, shootingSpot.position, Quaternion.identity);
         bullet.GetComponent<Rigidbody>().velocity = turretBarrel.transform.TransformDirection(Vector3.forward * bulletSpeed + CreatePrecisionFactor());
-        bullet.GetComponent<bulletHandler>().targetTag = bulletTargetString;
+        bullet.GetComponent<BulletHandler>().targetTag = bulletTargetString;
 
         //(FUTURE PROJECT, MAKE IT SO THAT IT SEES WHERE THE TARGET IS GOING AND SHOOTS ACORDINGLY USING THE TARGET'S RIGIDBODY VELOCITY, aka vector3.right * target.velocity.right * force)
     }
