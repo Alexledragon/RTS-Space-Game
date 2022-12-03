@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1520971842649544468
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1861092409804814078, guid: 0d590c7ee154a074d8195969640ea453, type: 3}
+      propertyPath: corvette
+      value: 
+      objectReference: {fileID: 9045012900357229174, guid: 98733003dc654da4f9b47af4b92cb098, type: 3}
+    - target: {fileID: 1861092409804814078, guid: 0d590c7ee154a074d8195969640ea453, type: 3}
+      propertyPath: battleShip
+      value: 
+      objectReference: {fileID: 2564453242624822277, guid: db3e4cd5c8c0f2e4abc690656f1b4c35, type: 3}
+    - target: {fileID: 1861092409804814078, guid: 0d590c7ee154a074d8195969640ea453, type: 3}
+      propertyPath: torpedoShip
+      value: 
+      objectReference: {fileID: 5193414193451725863, guid: 663cd7204360529439c117197f3ae87b, type: 3}
+    - target: {fileID: 1861092409804814078, guid: 0d590c7ee154a074d8195969640ea453, type: 3}
+      propertyPath: spawnEnemies
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508622748768545239, guid: 0d590c7ee154a074d8195969640ea453, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508622748768545239, guid: 0d590c7ee154a074d8195969640ea453, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508622748768545239, guid: 0d590c7ee154a074d8195969640ea453, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508622748768545239, guid: 0d590c7ee154a074d8195969640ea453, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508622748768545239, guid: 0d590c7ee154a074d8195969640ea453, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508622748768545239, guid: 0d590c7ee154a074d8195969640ea453, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508622748768545239, guid: 0d590c7ee154a074d8195969640ea453, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508622748768545239, guid: 0d590c7ee154a074d8195969640ea453, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508622748768545239, guid: 0d590c7ee154a074d8195969640ea453, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508622748768545239, guid: 0d590c7ee154a074d8195969640ea453, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508622748768545239, guid: 0d590c7ee154a074d8195969640ea453, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5284966289477822866, guid: 0d590c7ee154a074d8195969640ea453, type: 3}
+      propertyPath: m_Name
+      value: Enemy Spawner
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0d590c7ee154a074d8195969640ea453, type: 3}
